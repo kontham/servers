@@ -1,41 +1,20 @@
-<div >
-
-</div>
-
 <div class="container">
+  <app-cockpit (serverCreated)="onServerAdded($event)"
+               (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+
+  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <label>Server Name</label>
-        <p> Add new Servers or blueprints! </p>
-          <input type="text" class="form-control">
-      <br>
-      <button class="btn btn-primary"> Add Servers </button>
-      <button class="btn btn-primary"> Add Server Blueprint</button>
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"></app-server-element>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <label> Server Content </label>
-  <div class="row">
-    <div class="col-xs-12">
-      <input type="text">
-    </div>
-  </div>
-</div>
 
-<div class="container">
-<div class="row">
-  <div class="col-xs-12">
-
-  </div>
-</div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-
-    </div>
-  </div>
-</div>
+<!--    <ul class="list-group">-->
+<!--      <li class="list-group-item"-->
+<!--          *ngFor="let server of servers "-->
+<!--           > {{server}}</li>-->
+<!--    </ul>-->
